@@ -1,0 +1,13 @@
+DECLARE
+    v_ID SEGMERCADO.ID%type := 2;
+    v_DESCRIPTION SEGMERCADO.DESCRICAO%type := 'Atacadista';
+BEGIN
+    UPDATE SEGMERCADO SET DESCRICAO = upper(v_DESCRIPTION) WHERE ID = v_ID;
+    
+    v_ID := 1;
+    v_DESCRIPTION := 'Varejista';
+    
+    UPDATE SEGMERCADO SET DESCRICAO = upper(v_DESCRIPTION) WHERE ID = v_ID;
+    
+    COMMIT;
+END;
